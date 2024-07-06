@@ -94,14 +94,8 @@ def train_val(args, model, model_param):
     loss_function = nn.CrossEntropyLoss()  # 定义损失函数
     optimizer = optim.AdamW(net.parameters(), lr=args.lr, weight_decay=0.0005)  # 定义优化器，设置学习率
 
-    # 定义学习率衰减策略
-    # scheduler = lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.5)
-    # scheduler = lr_scheduler.MultiStepLR(optimizer,
-    #              MultiStep_milestones,
-    #              gamma=0.5,
-    #              last_epoch=-1)
-    lr = args.lr
-    print(lr)
+   # 定义学习率衰减策略
+    scheduler = CosineAnnealingLR(optimizer, T_max=100, eta_min=0)
     epochs = args.epochs  # 迭代次数
     best_val = 0.0
     print('开始训练')
@@ -131,7 +125,11 @@ def train_val(args, model, model_param):
             running_loss += loss.item()
             rate = (step + 1) / len(train_data_loader)
             print(f'rate:{rate} loss:{loss}')
-
+            
+        scheduler.step()
+        lr = scheduler.get_last_lr()
+        print("lr: {}".format(lr))
+        
         # val
         net.eval()  # 切换为验证模型，BN和Dropout不起作用
         acc = 0.0  # 验证集准确率
