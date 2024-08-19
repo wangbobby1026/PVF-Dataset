@@ -2,11 +2,12 @@
 1. This is code and dataset from the paper of "Photovoltaic Fault Dataset (PVF-10): A High-resolution UAV  Thermal Infrared Image Dataset for Fine-grained Photovoltaic Fault Classification "
 2. The code and dataset (PVF-10) are on the master branch.
 3. Since the weight file of the model is too large, we put it on "pan.baidu.com" for interested researchers at the link: https://pan.baidu.com/s/1SfvW7jvkqhF5tu7J-EAzjw; Code：PVFs 
+  train_val.py is the training script.
+  pre is the test script.
+  The model folder holds the classification models used in the paper.
+  The weights folder holds the weights files for the five models in the paper.
+4. The Google drive link of PVF-10: https://drive.google.com/file/d/1SQq0hETXi8I3Kdq9tDAEVyZgIsRCbOah/view?usp=sharing
+
+If you use PVF-10 for related research, please cite our paper: PVF-10: A high-resolution unmanned aerial vehicle thermal infrared image dataset for fine-grained photovoltaic fault classification, with bibtex as: @article{WANG2024124187, title = {PVF-10: A high-resolution unmanned aerial vehicle thermal infrared image dataset for fine-grained photovoltaic fault classification}, journal = {Applied Energy}, volume = {376}, pages = {124187}, year = {2024}, issn = {0306-2619}, doi = {https://doi.org/10.1016/j.apenergy.2024.124187}, url = {https://www.sciencedirect.com/science/article/pii/S0306261924015708}, author = {Bo Wang and Qi Chen and Mengmeng Wang and Yuntian Chen and Zhengjia Zhang and Xiuguo Liu and Wei Gao and Yanzhen Zhang and Haoran Zhang}, keywords = {Photovoltaic fault, Thermal infrared data, Classification, Deep learning, Unmanned aerial vehicle}, abstract = {Accurate identification of faulty photovoltaic (PV) modules is crucial for the effective operation and maintenance of PV systems. Deep learning (DL) algorithms exhibit promising potential for classifying PV fault (PVF) from thermal infrared (TIR) images captured by unmanned aerial vehicle (UAV), contingent upon the availability of extensive and high-quality labeled data. However, existing TIR PVF datasets are limited by low image resolution and incomplete coverage of fault types. This study proposes a high-resolution TIR PVF dataset with 10 classes, named PVF-10, comprising 5579 cropped images of PV panels collected from 8 PV power plants. These classes are further categorized into two groups according to the repairability of PVF, with 5 repairable and 5 irreparable classes each. Additionally, the circuit mechanisms underlying the TIR image features of typical PVF types are analyzed, supported by high-resolution images, thereby providing comprehensive information for PV operators. Finally, five state-of-the-art DL algorithms are trained and validated based on the PVF-10 dataset using three levels of resampling strategy. The results show that the overall accuracy (OA) of these algorithms exceeds 83%, with the highest OA reaching 93.32%. Moreover, the preprocessing procedure involving resampling and padding strategies are beneficial for improving PVF classification accuracy using PVF-10 datasets. The developed PVF-10 dataset is expected to stimulate further research and innovation in PVF classification.} }
 
 Note: Data provided by the School of Geography and Information Engineering, China University of Geosciences.
-
-
-train_val.py is the training script.
-pre is the test script.
-The model folder holds the classification models used in the paper.
-The weights folder holds the weights files for the five models in the paper.
