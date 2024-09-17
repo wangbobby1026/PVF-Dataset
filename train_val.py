@@ -14,8 +14,8 @@ from torch import nn, optim
 from torch.optim import lr_scheduler
 from torchvision import transforms
 import torch
-from ResNET.my_dataset import MyDataSet
-from ResNET.utils import read_split_data
+from my_dataset import MyDataSet
+from utils import read_split_data
 
 
 def train_val(args, model, model_param):
